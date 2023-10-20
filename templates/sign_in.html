@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<form class="site-form has-text-centered has-background-light" method="post" >
+    <h1 class="title is-size-2 has-text-centered ">Sign in</h1>
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="button is-succes is-fullwidth mt-4">Sign in</button>
+    <br>
+    <a href="{% url 'sign_up' %}" class="is-vcentered is-info">Ro`yxatdan o`tish</a>
+</form>
+{% endblock %}

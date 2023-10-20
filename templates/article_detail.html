@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static from static %}
+
+{% block content %}
+    <div class="container">
+        <div class="colunns is-centered">
+            <div class="column">
+                <div class="box" style="min-width: 100%;">
+                    <div class="title has-text-dark has-text-centered">{{article}}</div>
+                    <img src="{{ article.thumb.url }}" alt="" class="image is-centered container"
+                    style="min-width: 80%; height: 50%; border-radius: 5px; margin: 0 auto;">
+                    <div class="subtitle has-text-dark has-text-centered">{{ article.text }}</div>
+                </div>
+
+                <div class="has-text-right">
+                    <a href="{% url 'article_edit' article.slug %}" class="button is-info">
+                        <ion-icon name="create-outline"></ion-icon>
+                    </a>
+
+                    <a href="{% url 'article_delate' article.slug %}" class="button is-danger">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

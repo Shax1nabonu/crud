@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="columns is-multiple is-centered">
+        {% for article in articles %}
+        <div class="column is-3">
+            <div class="card has-text-centered">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title has-text-dark is-2">
+                                {{ article.title }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content ">
+                        <a href="{% url 'article_detail' article.slug %}">
+                            {{ article.snippet }}
+                        </a>
+                        <br>
+                        <div>{{ article.date }}</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
